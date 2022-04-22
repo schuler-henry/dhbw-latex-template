@@ -1,0 +1,2 @@
+\listoffigures
+\newpage

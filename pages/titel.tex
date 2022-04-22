@@ -1,0 +1,59 @@
+\begin{titlepage}
+  \begin{minipage}{6in}
+    \vspace*{-2cm}
+    \centering
+    \hspace{-2cm}
+	\ifx\vFirmenlogoPfad\empty
+	\else
+    \raisebox{-0.5\height}{\includegraphics[height=4cm]{\vFirmenlogoPfad}}
+  \fi
+	\hfill
+	\ifx\vDHBWLogoPfad\empty
+	\else
+   	\raisebox{-0.5\height}{\includegraphics[height=4cm]{\vDHBWLogoPfad}}
+	\fi
+  \end{minipage}
+  \begin{center}
+    \vspace*{0.5cm}
+    \Huge\textbf{\vTitel}\\
+		\ifx\vUntertitel\empty
+		\else
+			\Large\rm\vUntertitel\\
+		\fi
+		\vspace*{2cm}
+		\Large\textbf{\vArbeitstyp}
+		\ifx\vArbeitsbezeichnung\empty
+		\else
+			\textbf{\vArbeitsbezeichnung}
+		\fi
+		\\
+		\normalsize
+		über die \vPhasenbezeichnung\ des \vStudienJahr{n}\ Studienjahrs \\
+		\vspace*{1cm}
+		an der Fakultät für \vFakultaet\\
+		im Studiengang \vStudiengang\\
+		\vspace*{0.5cm}
+		an der DHBW \vDHBWStandort\\
+		\ifx\vDHBWCampus\empty
+		\else
+		Campus \vDHBWCampus\\
+		\fi
+		\vspace*{0.5cm}
+		von\\
+		\ifx\vAutor\empty
+		\else
+			\vAutor\\
+		\fi
+		\vspace*{1cm}
+		\vAbgabedatum
+		\vfill
+  \end{center}
+  \begin{tabular}{ll}
+    Bearbeitungszeitraum:&\vBearbeitungszeitraum\\
+    Matrikelnummer, Kurs:&\vMatrikelnummer, \vKursKuerzel\\
+	  Dualer Partner:&\vBetrieb\\
+	  Betreuer des Dualen Partners:&\vBetreuer\\
+  \end{tabular}
+\end{titlepage}
+\newpage
+\setcounter{page}{2}
