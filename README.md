@@ -46,6 +46,7 @@ Die Vorlage ist universal einsetzbar für T1000, T2000, T3000, die Studienarbeit
       \pagenumbering{Roman}
 
       \include{pages/titel}
+      % \include{pages/sperrvermerk}
       \include{pages/selbststaendigkeitserklaerung}
       \include{pages/abstract}
       \include{pages/inhaltsverzeichnis}
@@ -99,7 +100,7 @@ Die Vorlage ist universal einsetzbar für T1000, T2000, T3000, die Studienarbeit
 Bei Fehlern in den Dateien oder fehlenden Funktionalitäten wenden Sie sich bitte an [contact@henryschuler.de](mailto:contact@henryschuler.de?subject=[GitHub]%20dhbw-latex-template).
 
 
-## Autoren
+## Autor
 * [Henry Schuler](https://henryschuler.de) / [github](https://github.com/schuler-henry) / [E-Mail](mailto:contact@henryschuler.de?subject=[GitHub]%20dhbw-latex-template)
 
 ## [LICENSE](LICENSE)
