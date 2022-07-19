@@ -53,6 +53,7 @@ Die Vorlage ist universal einsetzbar für T1000, T2000, T3000, die Studienarbeit
       \include{pages/abkuerzungsverzeichnis}
       \include{pages/abbildungsverzeichnis}
       \include{pages/tabellenverzeichnis}
+      \include{pages/listingsverzeichnis}
       % \include{pages/vorwort}
       ```
    2. Weiterhin können hier eigenen Kapitel hinzugefügt werden.
