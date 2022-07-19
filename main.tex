@@ -37,7 +37,8 @@
 \usepackage{wrapfig}                                                                  % Bilder in Text integrieren
 \usepackage{enumitem}                                                                 % Befehl setlist (Zeilenabstand für itemize Umgebung auf 1 setzen)
 \usepackage{listings}                                                                 % Quelltexte
-\lstset{numbers=left, numberstyle=\tiny, numbersep=8pt, frame=single, framexleftmargin=15pt, breaklines=true}
+\definecolor{commentgreen}{RGB}{87,166,74}                                            % Kommentar-Farbe für Quellcode
+\lstset{numbers=left, numberstyle=\tiny, numbersep=8pt, frame=single, framexleftmargin=15pt, breaklines=true, commentstyle=\color{commentgreen}}
 \usepackage{tabularx}                                                                 % Tabellen
 \usepackage[addtotoc]{abstract}                                                       % Abstract
 \usepackage[nohyperlinks, printonlyused, withpage]{acronym}                           % Abkürzungen
@@ -76,6 +77,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%% Eigene Kommandos %%%%%%%%%%%%%%%%%%%%%%%%%
 % Definition von \gqq{}: Text in Anführungszeichen
 \newcommand{\gqq}[1]{\glqq #1\grqq}
+% Spezielle Hervorhebung von Schlüsselwörtern
 \newcommand{\textOrdner}[1]{\texttt{#1}}
 \newcommand{\textVariable}[1]{\texttt{#1}}
 \newcommand{\textKlasse}[1]{\texttt{#1}}
@@ -122,8 +124,6 @@
 \renewcommand{\thefootnote}{\arabic{footnote}}              % Sektionsbezeichnung von Fußnoten entfernen
 
 \renewcommand{\multfootsep}{, }                             % Mehrere Fußnoten durch ", " trennen
-
-\definecolor{commentgreen}{RGB}{87,166,74}                  % Kommentar-Farbe für Quellcode
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Dokument %%%%%%%%%%%%%%%%%%%%%%%%%%%%%

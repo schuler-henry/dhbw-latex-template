@@ -40,7 +40,20 @@ Die Vorlage ist universal einsetzbar für T1000, T2000, T3000, die Studienarbeit
       \def\vAbgabedatum{\today}               %% DD. MONTH YYYY
       \def\vBearbeitungszeitraum{}            %% DD.MM.YYYY - DD.MM.YYYY
       ```
-   1. Durch auskommentieren der einzelnen Zeilen können Verzeichnisse eingebunden oder ausgeschlossen werden:
+   1. Hier können eigene [Befehle](https://golatex.de//wiki/%5cnewcommand) angelegt werden
+      > Die Befehle \textXXXXX können individuell angepasst und verwendet werden, sodass Klassennamen o.ä. im Text speziell hervorgehoben werden. Verwendung im Text: \textFunktion{doSomething()}.
+      > "#1" wird dabei durch den angegebenen Text (hier: "doSomething()") ersetzt.
+      ```tex
+      %%%%%%%%%%%%%%%%%%%%%%%%% Eigene Kommandos %%%%%%%%%%%%%%%%%%%%%%%%%
+      % Definition von \gqq{}: Text in Anführungszeichen
+      \newcommand{\gqq}[1]{\glqq #1\grqq}
+      % Spezielle Hervorhebung von Schlüsselwörtern
+      \newcommand{\textOrdner}[1]{\texttt{#1}}
+      \newcommand{\textVariable}[1]{\texttt{#1}}
+      \newcommand{\textKlasse}[1]{\texttt{#1}}
+      \newcommand{\textFunktion}[1]{\texttt{#1}}
+      ```
+   2. Durch auskommentieren der einzelnen Zeilen können Verzeichnisse eingebunden oder ausgeschlossen werden:
       ```tex
       %%%%%%%%%%%%%%%%%%% Einführung und Verzeichnisse %%%%%%%%%%%%%%%%%%%
       \pagenumbering{Roman}
@@ -56,7 +69,7 @@ Die Vorlage ist universal einsetzbar für T1000, T2000, T3000, die Studienarbeit
       \include{pages/listingsverzeichnis}
       % \include{pages/vorwort}
       ```
-   2. Weiterhin können hier eigenen Kapitel hinzugefügt werden.
+   3. Weiterhin können hier eigenen Kapitel hinzugefügt werden.
       ```tex
       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
       %%%%                   EIGENE KAPITEL EINFÜGEN                  %%%%
