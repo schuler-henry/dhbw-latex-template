@@ -40,6 +40,7 @@
 \definecolor{commentgreen}{RGB}{87,166,74}                                            % Kommentar-Farbe für Quellcode
 \lstset{numbers=left, numberstyle=\tiny, numbersep=8pt, frame=single, framexleftmargin=15pt, breaklines=true, commentstyle=\color{commentgreen}}
 \usepackage{tabularx}                                                                 % Tabellen
+\usepackage{multirow}                                                                 % Mehrzeilige Tabelleneinträge
 \usepackage[addtotoc]{abstract}                                                       % Abstract
 \usepackage[nohyperlinks, printonlyused, withpage]{acronym}                           % Abkürzungen
 \usepackage{dirtree}                                                                  % Ordnerstruktur (z.B. für Anhang)
@@ -113,7 +114,7 @@
 \onehalfspacing
 \setlist{noitemsep}
 
-\addto\catpionsngerman{
+\addto\captionsngerman{
   \renewcommand{\figurename}{Abb.}
   \renewcommand{\tablename}{Tab.}
 }
