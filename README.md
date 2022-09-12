@@ -14,8 +14,9 @@ Die Vorlage ist universal einsetzbar für T1000, T2000, T3000, die Studienarbeit
    1. Trage die relevanten Daten in die Variablen ein.
       > Somit werden sämtliche Informationen automatisch auf dem Deckblatt etc. ergänzt!
       ```tex
-      \def\vFirmenlogoPfad{}                        %% relativer Pfad Bsp.: images/Firmenlogo.png
+      \def\vFirmenlogoPfad{}                  %% relativer Pfad Bsp.: images/Firmenlogo.png
       \def\vDHBWLogoPfad{images/DHBW_logo.jpg}      %% relativer Pfad Bsp.: images/DHBW_logo.jpg
+      \def\vUnterschrift{}                    %% Pfad zu Bild mit Unterschrift (für digitale Abgabe) Bsp.: images/Unterschrift.png
 
       \def\vTitel{}                           %% 
       \def\vUntertitel{}                      %% 
