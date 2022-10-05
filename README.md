@@ -111,9 +111,8 @@ Die Vorlage ist universal einsetzbar für T1000, T2000, T3000, die Studienarbeit
 > Auch die getroffenen Einstellungen in [main.tex](main.tex) müssen nicht bearbeitet werden.
 > Eigene Bibliotheken und Definitionen können hier aber eingebunden werden (Bestehende Module könnten dadurch jedoch beeinflusst werden).
 
-## Kontakt
-Bei Fehlern in den Dateien oder fehlenden Funktionalitäten wenden Sie sich bitte an [contact@henryschuler.de](mailto:contact@henryschuler.de?subject=[GitHub]%20dhbw-latex-template).
-
+## Feedback/Issues
+Sollten Sie Fehler in der Latex Vorlage finden oder Anregungen zur Verbesserung haben, können Sie diese in Form eines Issue unter dem [Issue-Tab](https://github.com/schuler-henry/dhbw-latex-template/issues) einreichen.
 
 ## Autor
 * [Henry Schuler](https://henryschuler.de) / [github](https://github.com/schuler-henry) / [E-Mail](mailto:contact@henryschuler.de?subject=[GitHub]%20dhbw-latex-template)
