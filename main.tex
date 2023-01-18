@@ -20,6 +20,7 @@
 \usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm,includehead]{geometry}      % Einstellungen der Seitenränder
 \usepackage[english, ngerman]{babel}                                                  % deutsche Silbentrennung
 \usepackage[utf8]{inputenc}                                                           % Umlaute
+\usepackage[official]{eurosym}                                                        % Euro Symbol
 \usepackage[T1]{fontenc}													                                    % Umlaute auch richtig ausgeben
 \usepackage{newtxtext,newtxmath}                                                      % Font = Times New Roman
 \usepackage{hyperref}
@@ -77,8 +78,9 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Eigene Kommandos %%%%%%%%%%%%%%%%%%%%%%%%%
-% Definition von \gqq{}: Text in Anführungszeichen
+% Definition von \gqq{} und \gq{}: Text in Anführungszeichen
 \newcommand{\gqq}[1]{\glqq #1\grqq}
+\newcommand{\gq}[1]{\glq #1\grq}
 % Spezielle Hervorhebung von Schlüsselwörtern
 \newcommand{\textOrdner}[1]{\texttt{#1}}
 \newcommand{\textVariable}[1]{\texttt{#1}}
