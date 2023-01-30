@@ -50,6 +50,18 @@ jobs:
       - name: Create build destination
         run: |
           mkdir public
+          cat > public/index.html <<EOL
+          <!doctype html>
+          <html>
+            <head>
+              <title>GitHub Pages deployed!</title>
+            </head>
+            <body>
+              <iframe src="./main.pdf" width="100%" height="100%" frameborder="0">
+              </iframe>
+            </body>
+          </html>
+          EOL
       
       - name: Download build
         uses: actions/download-artifact@v3
