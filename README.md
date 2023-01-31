@@ -152,6 +152,9 @@ Dazu müssen die Folgenden Schritte ausgeführt werden:
 2. Wähle im Optionsmenü den Punkt "Pages"
 3. Wähle als Quelle "Deploy from branch"
 4. Wähle als Branch-Namen "gh-pages" im "/root" Verzeichnis
+5. Aktiviere den Punkt "Enforce HTTPS"
+
+Die URL des Deployments lautet: \<user\>.github.io/\<repo-name\>
 
 Anschließend kann das automatische Deployment in der Datei [new_releases.yml](.github/workflows/new_release.yml) angepasst werden.
 1. Anpassen der anzuzeigenden HTML-Datei
