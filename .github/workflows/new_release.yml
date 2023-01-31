@@ -81,6 +81,5 @@ jobs:
         with:
           target_branch: gh-pages
           build_dir: public
-          fqdn: t3000.henryschuler.de
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
