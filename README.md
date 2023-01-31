@@ -4,6 +4,17 @@ Die Vorlage orientiert sich aber an den Vorschriften der Fakultät Technik an de
 
 Die Vorlage ist universal einsetzbar für T1000, T2000, T3000, die Studienarbeit, die Bachelorarbeit, sowie sonstige Projekte während der Theorie-Semester.
 
+## Overview
+- [dhbw-latex-template](#dhbw-latex-template)
+  - [Overview](#overview)
+  - [How to use](#how-to-use)
+  - [Release and Deploy](#release-and-deploy)
+    - [Release](#release)
+    - [Deployment](#deployment)
+  - [Feedback/Issues](#feedbackissues)
+  - [Author](#author)
+  - [LICENSE](#license)
+
 ## How to use
 1. Installiere einen beliebigen Latex-Editor (getestet unter: [VS-Code-Extension](https://github.com/James-Yu/LaTeX-Workshop/wiki/Install))
 1. Klone das Repo auf deine Maschine
@@ -111,10 +122,84 @@ Die Vorlage ist universal einsetzbar für T1000, T2000, T3000, die Studienarbeit
 > Auch die getroffenen Einstellungen in [main.tex](main.tex) müssen nicht bearbeitet werden.
 > Eigene Bibliotheken und Definitionen können hier aber eingebunden werden (Bestehende Module könnten dadurch jedoch beeinflusst werden).
 
+## Release and Deploy
+Die folgenden Automatisierungen sind in der Datei [new_release.yml](.github/workflows/new_release.yml) definiert und beschreiben [GitHub Actions](https://github.com/features/actions).
+
+Um automatisch einen Release zu erstellen, muss ein Tag im Format v\*.\*.\* erstellt und auf das Repository gepusht werden.
+Dies wird mit den Folgenden Befehlen erreicht:
+1. Tag erstellen
+   ```sh
+   git tag v*.*.*
+   ```
+2. Tag pushen
+   ```sh
+   git push origin v*.*.*
+   ```
+
+### Release
+Die GitHub Action [xu-cheng/latex-action@v2](https://github.com/marketplace/actions/github-action-for-latex) baut zunächst die PDF aus den Latex-Dokumenten des Repository.
+
+Anschließend erstellt die GitHub Action [marvinpinto/action-automatic-releases@latest](https://github.com/marvinpinto/action-automatic-releases) den Release unter Einbindung der generierten PDF-Datei.
+Zusätzlich wird ein Changelog generiert.
+
+### Deployment
+Für das automatische Deployment mit [GitHub Pages](https://pages.github.com) wird die GitHub Action [crazy-max/ghaction-github-pages@v3](https://github.com/crazy-max/ghaction-github-pages/tree/dev) verwendet.
+
+
+Zunächst muss GitHub Pages in den Repository-Einstellungen konfiguriert werden.
+Dazu müssen die Folgenden Schritte ausgeführt werden:
+1. Öffne die Einstellungen des Repository
+2. Wähle im Optionsmenü den Punkt "Pages"
+3. Wähle als Quelle "Deploy from branch"
+4. Wähle als Branch-Namen "gh-pages" im "/root" Verzeichnis
+
+Anschließend kann das automatische Deployment in der Datei [new_releases.yml](.github/workflows/new_release.yml) angepasst werden.
+1. Anpassen der anzuzeigenden HTML-Datei
+   ```yml
+   - name: Create build destination
+      run: |
+        mkdir public
+        cat > public/index.html <<EOL
+        <!doctype html>
+        <html>
+        <head>
+          <title>GitHub Pages deployed!</title>
+        </head>
+        <body>
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; top: 0;">
+            <iframe src="./main.pdf" width="100%" height="100%" frameborder="0">
+            </iframe>
+          </div>
+        </body>
+        </html>
+        EOL
+   ```
+   > Standardmäßig zeigt GitHub Pages unter Verwendung dieses HTML-Codes die PDF-Datei "main.pdf".
+   > Solltest du den Namen deiner [main.tex](main.tex) Datei verändert haben, musst du hier auch den Namen in den kompilierten Namen der PDF ändern.
+   
+   > Alternativ kannst du an dieser Stelle auch deinen eigenen HTML-Code einsetzen.
+   > Bedenke: Ohne Anpassungen des Deployments steht dir lediglich die generierte PDF-Datei im Repository zur Verfügung.
+2. Verbinden des Deployment mit einer eigenen Domain
+   ```yml
+   - name: Deploy to GitHub Pages
+     if: success()
+     uses: crazy-max/ghaction-github-pages@v3
+     with:
+       target_branch: gh-pages
+       build_dir: public
+     env:
+       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+   ```
+   > Unter dem Schlüssel "with:" kann neben der target_branch auch mittels des Keywords "fqdn:" die Zieldomain angegeben werden.
+   ```yml
+   fqdn: my-domain-name.de
+   ```
+   > Für weitere Personalisierungen: [crazy-max/ghaction-github-pages@v3 Dokumentation](https://github.com/crazy-max/ghaction-github-pages/tree/dev)
+
 ## Feedback/Issues
 Sollten Sie Fehler in der Latex Vorlage finden oder Anregungen zur Verbesserung haben, können Sie diese in Form eines Issue unter dem [Issue-Tab](https://github.com/schuler-henry/dhbw-latex-template/issues) einreichen.
 
-## Autor
+## Author
 * [Henry Schuler](https://henryschuler.de) / [github](https://github.com/schuler-henry) / [E-Mail](mailto:contact@henryschuler.de?subject=[GitHub]%20dhbw-latex-template)
 
 ## [LICENSE](LICENSE)
