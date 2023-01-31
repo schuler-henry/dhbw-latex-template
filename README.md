@@ -192,9 +192,12 @@ Anschließend kann das automatische Deployment in der Datei [new_releases.yml](.
    ```
    > Unter dem Schlüssel "with:" kann neben der target_branch auch mittels des Keywords "fqdn:" die Zieldomain angegeben werden.
    ```yml
-   fqdn: my-domain-name.de
+   with:
+     fqdn: my-domain-name.de
    ```
-   > Für weitere Personalisierungen: [crazy-max/ghaction-github-pages@v3 Dokumentation](https://github.com/crazy-max/ghaction-github-pages/tree/dev)
+   > Weitere Informationen zum Konfigurieren einer benutzerdefinierten Domain (Pages + Provider): [GitHub Docs](https://docs.github.com/de/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
+
+> Für weitere Personalisierungen: [crazy-max/ghaction-github-pages@v3 Dokumentation](https://github.com/crazy-max/ghaction-github-pages/tree/dev)
 
 ## Feedback/Issues
 Sollten Sie Fehler in der Latex Vorlage finden oder Anregungen zur Verbesserung haben, können Sie diese in Form eines Issue unter dem [Issue-Tab](https://github.com/schuler-henry/dhbw-latex-template/issues) einreichen.
